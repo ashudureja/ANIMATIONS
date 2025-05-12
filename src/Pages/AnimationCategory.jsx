@@ -16,10 +16,10 @@ const AnimationCategory = () => {
 
   const categories = [
     { title: "All", value: "" },
-    { title: "Text Effects", value: "text-effects" },
+    { title: "Text", value: "text-effects" },
     { title: "Buttons", value: "buttons" },
     { title: "Cards", value: "cards" },
-    { title: "SVG Transitions", value: "svg-transitions" },
+    { title: "SVG", value: "svg-transitions" },
     
     { title: "Background", value: "backgrounds" },
   ];
