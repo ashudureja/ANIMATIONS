@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { IoVideocamOutline } from "react-icons/io5";
 
-export const styles = document.createElement('style');
+export const styles = document.createElement("style");
 styles.innerHTML = `
   @keyframes wave {
     0% {
@@ -44,8 +44,6 @@ styles.innerHTML = `
 `;
 document.head.appendChild(styles);
 
-
-
 const AnimationCard = ({
   id,
   featured,
@@ -71,7 +69,7 @@ const AnimationCard = ({
       <motion.div
         whileHover={{ y: -5 }}
         transition={{ duration: 0.2 }}
-        className={`cursor-pointer rounded-xl relative  shadow-2xl ${className || ""}`}
+        className={`cursor-pointer rounded-xl relative h-50  shadow-2xl ${className || ""}`}
         onMouseEnter={() => setEnter(true)}
         onMouseLeave={() => setEnter(false)}
       >
@@ -86,19 +84,19 @@ const AnimationCard = ({
           </div>
         )}
         {featured && (
-            <div className="ribbon-container  absolute top-0 right-0 z-10 overflow-hidden w-24 h-24">
-              <div className="ribbon bg-green-500 text-black font-bold py-1 rotate-45 shadow-md transform translate-y-3 translate-x-3 w-32 text-center relative overflow-hidden">
-                <span className="z-20 relative tracking-wider text-xs">NEW</span>
-                <div className="ribbon-wave absolute inset-0 opacity-30"></div>
-              </div>
+          <div className="ribbon-container  absolute top-0 right-0 z-10 overflow-hidden w-24 h-24">
+            <div className="ribbon bg-green-500 text-black font-bold py-1 rotate-45 shadow-md transform translate-y-3 translate-x-3 w-32 text-center relative overflow-hidden">
+              <span className="z-20 relative tracking-wider text-xs">NEW</span>
+              <div className="ribbon-wave absolute inset-0 opacity-30"></div>
             </div>
-          )}
+          </div>
+        )}
         {componentKey ? (
           <>
             <video
               ref={videoref}
               src={video.asset.url}
-              className="h-50 relative  rounded-lg object-cover  "
+              className="absolute inset-0 w-full h-full object-cover object-center z-0"
               autoPlay
               muted
               loop
@@ -106,7 +104,6 @@ const AnimationCard = ({
             />
           </>
         ) : (
-          // Fallback to displaying the name
           <div className="text-sm custom-font opacity-60 p-4 overflow-hidden max-h-full">
             {name}
           </div>
@@ -129,7 +126,4 @@ AnimationCard.propTypes = {
   className: PropTypes.string,
 };
 
-
-
 export default AnimationCard;
-

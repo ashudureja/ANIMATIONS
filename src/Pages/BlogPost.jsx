@@ -90,7 +90,7 @@ const BlogPost = () => {
   if (loading) {
     return (
       <Main>
-        <div className="mx-auto max-w-2xl px-6 py-16 flex flex-col items-center">
+        <div className="mx-auto max-w-2xl px-6 py-16 flex flex-col justify-center items-center">
           <Loader2 className="h-10 w-10 animate-spin text-primary mb-4" />
           <span className="text-lg font-medium text-muted-foreground">
             Loading blog post...

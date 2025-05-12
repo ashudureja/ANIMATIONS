@@ -99,6 +99,13 @@ export default defineType({
       initialValue: false,
     }),
     defineField({
+      name: 'show',
+      title: 'Show',
+      type: 'boolean',
+      description: 'Whether this animation should be shown on the homepage',
+      initialValue: false,
+    }),
+    defineField({
       name: 'props',
       title: 'Props',
       type: 'array',

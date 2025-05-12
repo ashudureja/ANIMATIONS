@@ -16,11 +16,12 @@ const AnimationCategory = () => {
 
   const categories = [
     { title: "All", value: "" },
+    { title: "Text Effects", value: "text-effects" },
     { title: "Buttons", value: "buttons" },
     { title: "Cards", value: "cards" },
     { title: "SVG Transitions", value: "svg-transitions" },
-    { title: "Text Effects", value: "text-effects" },
-    { title: "3D Effects", value: "3d-effects" },
+    
+    { title: "Background", value: "backgrounds" },
   ];
 
   useEffect(() => {
@@ -52,7 +53,7 @@ const AnimationCategory = () => {
   if (loading) {
     return (
       <Main className="">
-        <div className="mx-auto max-w-7xl px-6 py-16 ">
+        <div className="mx-auto max-w-7xl px-6 py-16 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center justify-center py-20 space-y-4">
             <div className="relative">
               <Loader2 className="h-10 w-10 animate-spin text-primary" />
@@ -100,7 +101,7 @@ const AnimationCategory = () => {
   };
 
   return (
-    <main className="mx-auto max-w-7xl  px-4 sm:px-6 lg:px-6 py-6 bg-gray-100" >
+    <main className="mx-auto max-w-7xl  px-4 sm:px-6 lg:px-6 py-6 " >
       <div className="pb-5">
         <SlideTabs tabs={categories} onTabClick={setCategory} />
       </div>

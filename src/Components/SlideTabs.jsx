@@ -10,63 +10,61 @@ export const SlideTabsExample = () => {
 };
 
 export const SlideTabs = ({ tabs = [], onTabClick }) => {
-    const [position, setPosition] = useState({
-      left: 0,
-      width: 0,
-      opacity: 0,
-    });
-  
-    return (
-      <ul
-        onMouseLeave={() =>
-          setPosition((pv) => ({
-            ...pv,
-            opacity: 0,
-          }))
-        }
-        className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
-      >
-        {tabs.map((tab, index) => (
-          <Tab
-            key={index}
-            setPosition={setPosition}
-            onClick={() => onTabClick?.(tab.value)}
-          >
-            {tab.title}
-          </Tab>
-        ))}
-  
-        <Cursor position={position} />
-      </ul>
-    );
-  };
-  
+  const [position, setPosition] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
 
-  export const Tab = ({ children, setPosition, onClick }) => {
-    const ref = useRef(null);
-  
-    return (
-      <li
-        ref={ref}
-        onMouseEnter={() => {
-          if (!ref?.current) return;
-  
-          const { width } = ref.current.getBoundingClientRect();
-  
-          setPosition({
-            left: ref.current.offsetLeft,
-            width,
-            opacity: 1,
-          });
-        }}
-        onClick={onClick}
-        className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
-      >
-        {children}
-      </li>
-    );
-  };
-  
+  return (
+    <ul
+      onMouseLeave={() =>
+        setPosition((pv) => ({
+          ...pv,
+          opacity: 0,
+        }))
+      }
+      className="relative mx-auto flex w-full md:w-fit flex-nowrap overflow-x-auto md:overflow-visible rounded-full border-2 border-black bg-white p-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+    >
+      {tabs.map((tab, index) => (
+        <Tab
+          key={index}
+          setPosition={setPosition}
+          onClick={() => onTabClick?.(tab.value)}
+        >
+          {tab.title}
+        </Tab>
+      ))}
+
+      <Cursor position={position} />
+    </ul>
+  );
+};
+
+export const Tab = ({ children, setPosition, onClick }) => {
+  const ref = useRef(null);
+
+  return (
+    <li
+      ref={ref}
+      onMouseEnter={() => {
+        if (!ref?.current) return;
+
+        const { width } = ref.current.getBoundingClientRect();
+
+        setPosition({
+          left: ref.current.offsetLeft,
+          width,
+          opacity: 1,
+        });
+      }}
+      onClick={onClick}
+      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base whitespace-nowrap"
+    >
+      {children}
+    </li>
+  );
+};
 
 const Cursor = ({ position }) => {
   return (
