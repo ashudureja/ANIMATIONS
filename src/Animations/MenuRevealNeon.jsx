@@ -217,7 +217,7 @@ function Menubutton({ click, setClick, windowWidth }) {
   return (
     <button
       onClick={() => setClick(!click)}
-      className="absolute cursor-pointer z-[999] top-8 right-8  w-[90px] md:w-[110px] h-[40px] md:h-[46px] rounded-[25px] overflow-hidden bg-lime-400"
+      className="absolute cursor-pointer z-10 top-8 right-8  w-[90px] md:w-[110px] h-[40px] md:h-[46px] rounded-[25px] overflow-hidden bg-lime-400"
     >
       <motion.div
         className="relative w-full h-full"
