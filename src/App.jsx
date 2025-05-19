@@ -8,6 +8,8 @@ import AnimationDetail from './Pages/AnimationDetails'
 import BlogPost from './Pages/BlogPost'
 
 
+
+
 const App = () => {
   return (
     <div>
