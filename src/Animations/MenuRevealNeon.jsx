@@ -109,7 +109,7 @@ const MenuNeon = () => {
   };
 
   return (
-    <div className="h-full w-full bg-black relative">
+    <div className="h-full w-full bg-white relative">
       <div >
         <Menubutton
           click={click}
