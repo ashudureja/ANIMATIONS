@@ -400,11 +400,13 @@ const AnimationDetail = () => {
                 </div>
               </div>
 
-              <div className="h-[100vh] bg-black overflow-y-auto rounded-2xl w-full shadow-inner">
+              {window.innerWidth > 768 ? <div className="h-[100vh] bg-black overflow-y-auto rounded-2xl w-full shadow-inner">
                 <DynamicComponentRenderer
                   componentKey={animation.componentKey}
                 />
-              </div>
+              </div>: <div className="h-[200px] bg-black p-5 text-white text-sm text-center flex justify-center items-center overflow-y-auto rounded-2xl w-full shadow-inner">
+                Click on the Fullscreen button to view the animation in mobile.
+                </div>}
             </motion.div>
 
             {/* Tabs for Implementation and Dependencies */}
