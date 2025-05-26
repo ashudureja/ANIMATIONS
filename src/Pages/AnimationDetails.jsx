@@ -315,7 +315,7 @@ const AnimationDetail = () => {
               <X size={24} />
             </button>
           </div>
-          <div className="w-full h-full flex items-center justify-center rounded-xl">
+          <div className="w-full h-full  flex items-center justify-center rounded-xl">
             <DynamicComponentRenderer componentKey={animation.componentKey} />
           </div>
         </motion.div>
@@ -388,18 +388,19 @@ const AnimationDetail = () => {
 
                 <div>
                   {animation.componentKey && (
-                    <Button
-                      onClick={toggleFullscreen}
-                      className="flex items-center gap-3 bg-white text-black  text-sm cursor-pointer border border-border rounded-full hover:shadow-sm transition-all duration-300"
+                    <Link
+                      to={`/livepreview/${animation.componentKey}`}
+                      
+                      className="flex items-center p-2 gap-3 bg-white text-black  text-sm cursor-pointer border border-border rounded-full hover:shadow-sm transition-all duration-300"
                     >
                       <Maximize2 className="h-4 w-4" />
                       Fullscreen
-                    </Button>
+                    </Link>
                   )}
                 </div>
               </div>
 
-              <div className="h-100 bg-red-100 rounded-2xl w-full shadow-inner">
+              <div className="h-[100vh] bg-black overflow-y-auto rounded-2xl w-full shadow-inner">
                 <DynamicComponentRenderer
                   componentKey={animation.componentKey}
                 />

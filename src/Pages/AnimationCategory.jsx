@@ -18,8 +18,8 @@ const AnimationCategory = () => {
     { title: "All", value: "" },
     { title: "Text", value: "text-effects" },
     { title: "Buttons", value: "buttons" },
-    { title: "Cards", value: "cards" },
-    { title: "SVG", value: "svg-transitions" },
+    { title: "Menu", value: "cards" },
+    { title: "Page", value: "svg-transitions" },
     
     { title: "Background", value: "backgrounds" },
   ];
@@ -117,10 +117,10 @@ const AnimationCategory = () => {
             <motion.div
               initial="hidden"
               animate="show"
-              className="grid mt-5  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12"
+              className="grid mt-5 rounded-2xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12"
             >
               {animations.map((animation) => (
-                <motion.div key={animation._id}>
+                <motion.div key={animation._id} className="">
                   <AnimationCard
                     id={animation.id.current}
                     category={animation.category}

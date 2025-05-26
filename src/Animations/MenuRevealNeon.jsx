@@ -109,7 +109,8 @@ const MenuNeon = () => {
   };
 
   return (
-    <div className="h-full w-full bg-white relative">
+    <div className="min-h-screen flex justify-center items-center w-full bg-black relative">
+      <div className="text-5xl text-white">Cick on menu</div>
       <div >
         <Menubutton
           click={click}
@@ -144,6 +145,7 @@ const MenuNeon = () => {
                     >
                       <motion.svg
                         animate={isHovered ? { width: 48 } : { width: 0 }}
+                        transition={{  ease: "easeInOut" }}
                         width="0"
                         height="31"
                         viewBox="0 0 105 62"

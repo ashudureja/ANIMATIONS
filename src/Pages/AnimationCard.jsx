@@ -75,7 +75,7 @@ const AnimationCard = ({
       >
         {!enter && (
           <div className="absolute top-2 left-2 z-[999]  p-1 rounded-sm">
-            {/* Use the imported icon or a simple fallback */}
+            
             {typeof IoVideocamOutline !== "undefined" ? (
               <IoVideocamOutline />
             ) : (
@@ -83,20 +83,20 @@ const AnimationCard = ({
             )}
           </div>
         )}
-        {featured && (
+        {/* {featured && (
           <div className="ribbon-container  absolute top-0 right-0 z-10 overflow-hidden w-24 h-24">
             <div className="ribbon bg-green-500 text-black font-bold py-1 rotate-45 shadow-md transform translate-y-3 translate-x-3 w-32 text-center relative overflow-hidden">
               <span className="z-20 relative tracking-wider text-xs">NEW</span>
               <div className="ribbon-wave absolute inset-0 opacity-30"></div>
             </div>
           </div>
-        )}
+        )} */}
         {componentKey ? (
           <>
             <video
               ref={videoref}
               src={video.asset.url}
-              className="absolute inset-0 w-full h-full object-cover object-center z-0"
+              className="absolute inset-0 w-full rounded-lg h-full object-cover object-center z-0"
               autoPlay
               muted
               loop

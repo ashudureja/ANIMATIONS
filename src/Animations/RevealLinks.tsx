@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const RevealLinks = () => {
   return (
-    <section className="grid w-full h-full place-content-center gap-2 bg-purple-300 px-8 py-12 text-black rounded-lg">
+    <section className="grid w-full min-h-screen place-content-center gap-2 bg-purple-300 px-8 py-12 text-black rounded-lg">
       <FlipLink href="#">Twitter</FlipLink>
       <FlipLink href="#">Linkedin</FlipLink>
       <FlipLink href="#">Facebook</FlipLink>

@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: 'Bestie Seventy';
-    src: url('./BestieSeventy.ttf') format('truetype');
-        
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: 'Bestie Seventy';
+  src: url('/BestieSeventy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
   @theme {
     --font-custom: 'Bestie Seventy', Oswald, sans-serif;

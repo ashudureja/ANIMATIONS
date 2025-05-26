@@ -6,7 +6,7 @@ import AnimationList from './Components/AnimationList'
 import AnimationCategory from './Pages/AnimationCategory'
 import AnimationDetail from './Pages/AnimationDetails'
 import BlogPost from './Pages/BlogPost'
-
+import Livepreview from './Livepreview'
 
 
 
@@ -16,7 +16,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Hero/>}></Route>
         <Route path="/animation" element={<AnimationCategory/>}></Route>
-        <Route path="/animation/:id" element={<AnimationDetail/>}></Route>
+        <Route path="/animation/:id" element={<AnimationDetail/>}>
+        
+        </Route>
+        <Route path="/livepreview/:id" element={<Livepreview/>}></Route>
         <Route path="/blog/:animationId" element={<BlogPost/>}></Route>
        
       </Routes>
